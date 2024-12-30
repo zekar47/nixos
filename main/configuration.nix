@@ -15,7 +15,7 @@
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "NixBox"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -74,12 +74,10 @@
     wget
     figlet
     neovim
-    w3m
     p7zip
     git
     gnumake
     stow
-    gcc
     tmux
     killall
     fastfetch
@@ -130,7 +128,7 @@
   #   remotePlay.openFirewall = true;
   # };
   
-  security.rtkit.enable = true;
+  # security.rtkit.enable = true;
   # List services that you want to enable:
   services.spice-vdagentd.enable = true;
   services.pipewire = {
