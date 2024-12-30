@@ -49,6 +49,20 @@
     };
   };
   
+  fonts.packages = with pkgs ; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+    (nerdfonts.override { fonts = [ "FiraCode" 	"DroidSansMono" "JetBrainsMono" "Monofur" "Mononoki" "Iosevka" ]; })
+  ];
+
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.zekar = {
     isNormalUser = true;
@@ -76,7 +90,6 @@
     neovim
     p7zip
     git
-    gnumake
     stow
     tmux
     killall
@@ -89,25 +102,29 @@
 
     # Games
     lutris
-    # steam-run
+    steam-run
 
     # Multimedia
     mpv
+
+    # Development
+    gnumake
+    gcc
 
     # Others
     keepassxc
     home-manager
 
-    # # Suckless
-    # # st
-    # (st.overrideAttrs (oldAttrs: rec {
-    #   src = /home/zekar/suckless/st;
-    #   buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.imlib2 ];
-    # }))
-    # # dmenu
-    # (dmenu.overrideAttrs (oldAttrs: rec {
-    #   src = /home/zekar/suckless/dmenu;
-    # }))
+    # Suckless
+    # st
+    (st.overrideAttrs (oldAttrs: rec {
+      src = /home/zekar/suckless/st;
+      buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.imlib2 ];
+    }))
+    # dmenu
+    (dmenu.overrideAttrs (oldAttrs: rec {
+      src = /home/zekar/suckless/dmenu;
+    }))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -119,14 +136,14 @@
   #   enableSSHSupport = true;
   # };
   programs.zsh.enable = true;
-  # programs.nix-ld = {
-  #   enable = true;
-  #   libraries = pkgs.steam-run.fhsenv.args.multiPkgs pkgs;
-  # };
-  # programs.steam = {
-  #   enable = true;
-  #   remotePlay.openFirewall = true;
-  # };
+  programs.nix-ld = {
+    enable = true;
+    libraries = pkgs.steam-run.fhsenv.args.multiPkgs pkgs;
+  };
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+  };
   
   # security.rtkit.enable = true;
   # List services that you want to enable:
