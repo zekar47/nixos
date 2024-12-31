@@ -1,7 +1,17 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
+
+
+let
+  neovimconfig = import ../nixvim;
+  nvim = inputs.nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
+  inherit pkgs;
+  module = neovimconfig;
+  };
+in
 {
   imports = [
+    inputs.nixvim.homeManagerModules.nixvim
     ./zsh/zsh.nix
     ./fastfetch/fastfetch.nix
     ./nvim/nvim.nix
@@ -12,6 +22,7 @@
   home.stateVersion = "23.11"; 
 
   home.packages = [
+    nvim
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -46,7 +57,6 @@
   #  /etc/profiles/per-user/zekar/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
