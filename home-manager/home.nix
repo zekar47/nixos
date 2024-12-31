@@ -1,9 +1,7 @@
 { config, pkgs, inputs, ... }:
 
-
-
 let
-  neovimconfig = import ../nixvim;
+  neovimconfig = import ./nixvim;
   nvim = inputs.nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
   inherit pkgs;
   module = neovimconfig;
@@ -14,7 +12,6 @@ in
     inputs.nixvim.homeManagerModules.nixvim
     ./zsh/zsh.nix
     ./fastfetch/fastfetch.nix
-    ./nvim/nvim.nix
   ];
   home.username = "zekar";
   home.homeDirectory = "/home/zekar";

@@ -88,12 +88,12 @@
 
   environment.systemPackages = with pkgs; [
     # Terminal stuff
+    alacritty
     btop
     vim 
     unzip
     wget
     figlet
-    neovim
     p7zip
     git
     stow
@@ -116,19 +116,23 @@
     # Development
     gnumake
     gcc
+    cargo
+    rustc
 
     # Others
     keepassxc
     home-manager
+    font-manager
+
 
     # Suckless
     # st
-    (st.overrideAttrs (oldAttrs: rec {
+    (st.overrideAttrs (oldAttrs: {
       src = /home/zekar/suckless/st;
-      buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.imlib2 ];
+      buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.imlib2 pkgs.xorg.libX11];
     }))
     # dmenu
-    (dmenu.overrideAttrs (oldAttrs: rec {
+    (dmenu.overrideAttrs (oldAttrs: {
       src = /home/zekar/suckless/dmenu;
     }))
   ];
