@@ -12,23 +12,23 @@
     };
   };
   outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs: 
-  let
-    system = "x86_64-linux";
-  in
-  {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs system; };
-      modules = [ 
-        ./main/configuration.nix
-	      home-manager.nixosModules.home-manager {
-          home-manager.extraSpecialArgs = {
-            inherit inputs;
-            inherit system;
-          };
-          home-manager.useGlobalPkgs = true;
-          home-manager.users."zekar" = import ./home-manager/home.nix;
-        }
-      ];
-    };
-  };
+    let
+      system = "x86_64-linux";
+    in
+      {
+        nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs system; };
+          modules = [ 
+            ./main/configuration.nix
+            home-manager.nixosModules.home-manager {
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+                inherit system;
+              };
+              home-manager.useGlobalPkgs = true;
+              home-manager.users."zekar" = import ./home-manager/home.nix;
+            }
+          ];
+        };
+      };
 }

@@ -100,6 +100,7 @@
     tmux
     killall
     fastfetch
+    fzf
 
     # Internet
     qutebrowser
@@ -118,6 +119,7 @@
     gcc
     cargo
     rustc
+    python3
 
     # Others
     keepassxc
@@ -127,12 +129,12 @@
 
     # Suckless
     # st
-    (st.overrideAttrs (oldAttrs: {
+    (st.overrideAttrs (oldAttrs: rec {
       src = /home/zekar/suckless/st;
-      buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.imlib2 pkgs.xorg.libX11];
+      buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.imlib2 pkgs.harfbuzz pkgs.xorg.libXcursor ];
     }))
     # dmenu
-    (dmenu.overrideAttrs (oldAttrs: {
+    (dmenu.overrideAttrs (oldAttrs: rec {
       src = /home/zekar/suckless/dmenu;
     }))
   ];

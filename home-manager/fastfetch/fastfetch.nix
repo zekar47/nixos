@@ -4,8 +4,8 @@
     enable = true;
     settings = {
       logo = {
-	type = "kitty-direct";
-	source = "/home/zekar/nixos/home-manager/fastfetch/logo.png";
+	type = "sixel";
+	source = "/home/zekar/nixos/home-manager/fastfetch/logo.png"; # Is this correct? Is there a way to put all necessary files into /nix/store/? Even then, would that be a good idea?
 	width = 30;
       };
       display = {

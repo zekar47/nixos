@@ -1,7 +1,10 @@
 { inputs, lib, system, pkgs, ... }:
 {
-  colorschemes.oxocarbon.enable = true;
 
+  imports = [
+    ./lsp.nix
+  ];
+  colorschemes.oxocarbon.enable = true;
 
   extraConfigLuaPre = '''';
   enableMan = true;
@@ -39,27 +42,6 @@
         auto_install = true;
         highlight.enable = true;
         indent.enable = true;
-      };
-    };
-    lsp = {
-      enable = true;
-      servers = {
-        bashls.enable = true;
-        clangd.enable = true;
-        cssls.enable = true;
-        # gdscript.enable = true;
-        html.enable = true;
-        java_language_server.enable = true;
-        jsonls.enable = true;
-        lua_ls.enable = true;
-        markdown_oxide.enable = true;
-        nixd.enable = true;
-        pyright.enable = true;
-        rust_analyzer = {
-          enable = true;
-          installCargo = true;
-          installRustc = true;
-        };
       };
     };
   };

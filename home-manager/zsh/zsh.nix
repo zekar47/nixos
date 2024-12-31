@@ -9,7 +9,6 @@
     };
     oh-my-zsh = {
       enable = true;
-      theme = "duellj";
       plugins = [
       "alias-finder"
       "sudo"
@@ -60,6 +59,8 @@
       nc = "nvim /home/zekar/nixos/main/configuration.nix"; # As in "Nix Config"
     };
     initExtra = ''
+      fastfetch
+
       # Unset the NEWLINE variable initially
       unset NEWLINE
 
@@ -74,6 +75,8 @@
       preexec() {
 	export NEWLINE=true
       }
+
+      source /home/zekar/nixos/home-manager/zsh/zekar.zsh-theme
     '';
     syntaxHighlighting = {
       enable = true;
