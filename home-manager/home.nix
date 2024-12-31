@@ -3,6 +3,7 @@
 {
   imports = [
     ./zsh/zsh.nix
+    ./fastfetch/fastfetch.nix
   ];
   home.username = "zekar";
   home.homeDirectory = "/home/zekar";
@@ -71,9 +72,5 @@
       "--group-directories-first"
       "--hyperlink"
     ];
-  };
-
-  programs.fastfetch = {
-    enable = true;
   };
 }
