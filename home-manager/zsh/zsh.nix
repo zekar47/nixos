@@ -56,9 +56,8 @@
       extract = "/home/zekar/scripts/extract.sh";
 
       # NixOS
-      rb = "sudo nixos-rebuild switch --flake /home/zekar/nixos";
+      rb = "sudo nixos-rebuild switch --flake /home/zekar/nixos --impure";
       nc = "nvim /home/zekar/nixos/main/configuration.nix"; # As in "Nix Config"
-      hb = "home-manager switch";
     };
     initExtra = ''
       # Unset the NEWLINE variable initially

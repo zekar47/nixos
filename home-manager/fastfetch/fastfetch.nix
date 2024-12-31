@@ -5,17 +5,17 @@
     settings = {
       logo = {
 	type = "kitty-direct";
-	source = "./logo.png";
+	source = "/home/zekar/nixos/home-manager/fastfetch/logo.png";
 	width = 30;
       };
       display = {
-	separator = " -> ";
+	separator = " - ";
       };
       modules = [
 	{
 	  type = "custom";
-	  format = "\u001b[31m・・・Z・E・K・A・R・・・";
-	  keyColor = "red";
+	  format = "・・・Z・E・K・A・R・・・";
+	  outputColor = "red";
 	}
 	"break"
 	{

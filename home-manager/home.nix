@@ -4,6 +4,7 @@
   imports = [
     ./zsh/zsh.nix
     ./fastfetch/fastfetch.nix
+    ./nvim/nvim.nix
   ];
   home.username = "zekar";
   home.homeDirectory = "/home/zekar";
