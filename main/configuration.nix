@@ -119,6 +119,7 @@
 
     # Others
     keepassxc
+    home-manager
 
     # Suckless
     # st
