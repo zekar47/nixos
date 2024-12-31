@@ -51,7 +51,7 @@
   
   fonts.packages = with pkgs ; [
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     liberation_ttf
     fira-code
@@ -59,7 +59,13 @@
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
-    (nerdfonts.override { fonts = [ "FiraCode" 	"DroidSansMono" "JetBrainsMono" "Monofur" "Mononoki" "Iosevka" ]; })
+    # (nerdfonts.override { fonts = [ "FiraCode" 	"DroidSansMono" "JetBrainsMono" "Monofur" "Mononoki" "Iosevka" ]; })
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.monofur
+    nerd-fonts.mononoki
+    nerd-fonts.iosevka
   ];
 
 
@@ -138,7 +144,10 @@
   programs.zsh.enable = true;
   programs.nix-ld = {
     enable = true;
-    libraries = pkgs.steam-run.fhsenv.args.multiPkgs pkgs;
+    # libraries = [
+    #   pkgs.steam-run.fhsenv.args.multiPkgs
+    #   pkgs
+    # ];
   };
   programs.steam = {
     enable = true;
