@@ -87,92 +87,28 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
-  environment.systemPackages = with pkgs; [
-    # Terminal stuff
-    alacritty
-    btop
-    vim 
-    unzip
-    wget
-    figlet
-    p7zip
-    git
-    stow
-    tmux
-    killall
-    fastfetch
-    fzf
-
-    # Internet
-    qutebrowser
-    firefox-bin
-    vesktop
-
-    # Games
-    lutris
-    steam-run
-
-    # Multimedia
-    mpv
-
-    # Development
-    gnumake
-    gcc
-    cargo
-    rustc
-    python3
-
-    # Others
-    keepassxc
-    home-manager
-    font-manager
-
-
-    # Suckless
-    # st
-    (st.overrideAttrs (oldAttrs: rec {
-      src = /home/zekar/suckless/st;
-      buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.imlib2 pkgs.harfbuzz pkgs.xorg.libXcursor ];
-    }))
-    # dmenu
-    (dmenu.overrideAttrs (oldAttrs: rec {
-      src = /home/zekar/suckless/dmenu;
-    }))
-  ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  programs.zsh.enable = true;
-  programs.nix-ld = {
-    enable = true;
-    # libraries = [
-    #   pkgs.steam-run.fhsenv.args.multiPkgs
-    #   pkgs
-    # ];
+  programs = {
+    zsh.enable = true;
+    nix-ld.enable = true;
   };
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
+
+  services = {
+    spice-vdagentd.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+    openssh.enable = true;
   };
-  
-  # security.rtkit.enable = true;
-  # List services that you want to enable:
-  services.spice-vdagentd.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

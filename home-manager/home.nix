@@ -1,96 +1,16 @@
 { config, pkgs, inputs, ... }:
 
-let
-  neovimconfig = import ./nixvim;
-  nvim = inputs.nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
-  inherit pkgs;
-  module = neovimconfig;
-  };
-in
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    ./zsh/zsh.nix
-    ./fastfetch/fastfetch.nix
+    ./programs.nix
+    ./packages.nix
   ];
-  home.username = "zekar";
-  home.homeDirectory = "/home/zekar";
-
-  home.stateVersion = "23.11"; 
-
-  home.packages = [
-    nvim
-  ];
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
-
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/zekar/etc/profile.d/hm-session-vars.sh
-  #
-  home.sessionVariables = {
-  };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-  
-  programs = {
-    cava = {};
-  }
-  programs.cava = {
-    enable = true;
-    settings = {
-      general.framerate = 240;
-      color.foreground = "red";
-      smoothing.noise_reduction = 20;
-    };
-  };
-
-  programs.eza = {
-    enable = true;
-    enableZshIntegration = true;
-    icons = "always";
-    extraOptions = [
-      "-hAl"
-      "--color=always"
-      "--group-directories-first"
-      "--hyperlink"
-    ];
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "zekar47";
-    userEmail = "";
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
+  home = {
+    username = "zekar";
+    homeDirectory = "/home/zekar";
+    stateVersion = "23.11";
+    file = {};
+    sessionVariables = {};
   };
 }

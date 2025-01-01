@@ -4,8 +4,8 @@
   imports = [
     ./zsh/zsh.nix
     ./fastfetch/fastfetch.nix
-
   ];
+
   programs = {
     cava = {
       enable = true;
@@ -38,5 +38,7 @@
       enable = true;
       enableZshIntegration = true;
     };
+
+    home-manager.enable = true;
   };
 }
