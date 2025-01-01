@@ -81,4 +81,13 @@ in
       "--hyperlink"
     ];
   };
+
+  programs.cava = {
+    enable = true;
+    settings = {
+      general.framerate = 240;
+      color.foreground = "red";
+      smoothing.noise_reduction = 20;
+    };
+  };
 }
