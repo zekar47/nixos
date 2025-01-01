@@ -59,15 +59,16 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   
-  programs.git = {
+  programs = {
+    cava = {};
+  }
+  programs.cava = {
     enable = true;
-    userName = "zekar47";
-    userEmail = "";
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
+    settings = {
+      general.framerate = 240;
+      color.foreground = "red";
+      smoothing.noise_reduction = 20;
+    };
   };
 
   programs.eza = {
@@ -82,12 +83,14 @@ in
     ];
   };
 
-  programs.cava = {
+  programs.git = {
     enable = true;
-    settings = {
-      general.framerate = 240;
-      color.foreground = "red";
-      smoothing.noise_reduction = 20;
-    };
+    userName = "zekar47";
+    userEmail = "";
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }
