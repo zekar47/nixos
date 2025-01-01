@@ -6,25 +6,22 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    [ 
+      ./hardware/vm-1.nix
       ./packages.nix
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.grub = {
+    enable = true;
+    device = "dev/vda";
+    useOSProber = true;
+  };
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+  };
 
   # Set your time zone.
   time.timeZone = "America/Monterrey";
@@ -32,24 +29,55 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Configure xserver
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.zekar = {
+      isNormalUser = true;
+      description = "zekar";
+      extraGroups = [ "networkmanager" "wheel" ];
     };
-    displayManager.startx.enable = true;
-    windowManager = {
-      dwm = {
-        enable = true;
-        package = pkgs.dwm.overrideAttrs {
-          src = /home/zekar/suckless/dwm;
+  };
+
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  programs = {
+    zsh.enable = true;
+    nix-ld.enable = true;
+  };
+
+  services = {
+    spice-vdagentd.enable = true;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+
+    openssh.enable = true;
+
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+      displayManager.startx.enable = true;
+      windowManager = {
+        dwm = {
+          enable = true;
+          package = pkgs.dwm.overrideAttrs {
+            src = /home/zekar/suckless/dwm;
+          };
         };
       };
     };
   };
-  
+
   fonts.packages = with pkgs ; [
     noto-fonts
     noto-fonts-cjk-sans
@@ -68,53 +96,6 @@
     nerd-fonts.mononoki
     nerd-fonts.iosevka
   ];
-
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.zekar = {
-    isNormalUser = true;
-    description = "zekar";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
-  users.defaultUserShell = pkgs.zsh;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-  programs = {
-    zsh.enable = true;
-    nix-ld.enable = true;
-  };
-
-  services = {
-    spice-vdagentd.enable = true;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
-    };
-    openssh.enable = true;
-  };
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

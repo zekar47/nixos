@@ -10,33 +10,26 @@ in
 {
   home.packages = with pkgs; [
     # Terminal utilities
-    btop
     nvim
     figlet
-    fastfetch
-    fzf
-    tmux
-    git
 
     # Internet
     qutebrowser
-    firefox-bin
     vesktop
     jellycli
-    transmission_4
-    qbittorrent-enhanced
-    tor-browser
+    # transmission_4
+    # qbittorrent-enhanced
+    # tor-browser
 
     # Games
     lutris
     steam-run
-    heroic
-    osu-lazer-bin
-    prismlauncher
+    # heroic
+    # osu-lazer-bin
+    # prismlauncher
 
     # Multimedia
-    mpv
-    krita
+    # krita
 
     # Development
     cargo
