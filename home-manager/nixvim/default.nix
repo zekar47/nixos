@@ -1,13 +1,10 @@
 { specialArgs, inputs, lib, system, pkgs, ... }:
 
-let
-  theme = if (specialArgs.hostName == "lap") then "catppuccin" else "oxocarbon";
-in
 {
   imports = [
     ./lsp.nix
+    ./themes.nix
   ];
-  colorschemes.${theme}.enable = true;
 
   extraConfigLuaPre = '''';
   enableMan = true;
