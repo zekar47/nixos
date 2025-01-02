@@ -20,6 +20,7 @@
           specialArgs = { inherit inputs system; };
           modules = [ 
             ./main/configuration.nix
+      	    ./main/hardware/vm-1.nix
             home-manager.nixosModules.home-manager {
               home-manager.extraSpecialArgs = {
                 inherit inputs;
@@ -30,5 +31,20 @@
             }
           ];
         };
+        nixosConfigurations.lap = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs system; };
+          modules = [ 
+            ./main/configuration.nix
+      	    ./main/hosts/lap.nix
+            home-manager.nixosModules.home-manager {
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+                inherit system;
+              };
+              home-manager.useGlobalPkgs = true;
+              home-manager.users."zekar" = import ./home-manager/home.nix;
+            }
+          ];
+      	};
       };
 }

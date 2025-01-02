@@ -7,21 +7,10 @@
 {
   imports =
     [ 
-      ./hardware/vm-1.nix
       ./packages.nix
     ];
 
-  # Bootloader.
-  boot.loader.grub = {
-    enable = true;
-    device = "dev/vda";
-    useOSProber = true;
-  };
-
-  networking = {
-    hostName = "nixos";
-    networkmanager.enable = true;
-  };
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Monterrey";
