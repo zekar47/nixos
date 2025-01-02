@@ -1,11 +1,16 @@
-{ config, lib, pkgs, ...}:
+{ specialArgs, config, lib, pkgs, ...}:
+
+let
+  img = if (specialArgs.hostName == "lap") then "/home/zekar/nixos/home-manager/fastfetch/blue.png" else "/home/zekar/nixos/home-manager/fastfetch/red.png";
+  col = if (specialArgs.hostName == "lap") then "cyan" else "red";
+in
 {
   programs.fastfetch = {
     enable = true;
     settings = {
       logo = {
 	type = "sixel";
-	source = "/home/zekar/nixos/home-manager/fastfetch/logo.png"; # Is this correct? Is there a way to put all necessary files into /nix/store/? Even then, would that be a good idea?
+	source = img;
 	width = 30;
       };
       display = {
@@ -15,29 +20,29 @@
 	{
 	  type = "custom";
 	  format = "・・・Z・E・K・A・R・・・";
-	  outputColor = "red";
+	  outputColor = col;
 	}
 	"break"
 	{
 	  type = "os";
-	  keyColor = "red";
+	  keyColor = col;
 	}
 	{
 	  type = "packages";
-	  keyColor = "red";
+	  keyColor = col;
 	}
 	"break"
 	{
 	  type = "cpu";
-	  keyColor = "red";
+	  keyColor = col;
 	}
 	{
 	  type = "gpu";
-	  keyColor = "red";
+	  keyColor = col;
 	}
 	{
 	  type = "memory";
-	  keyColor = "red";
+	  keyColor = col;
 	}
 	"break"
 	"break"

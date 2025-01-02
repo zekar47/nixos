@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ specialArgs, config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -6,6 +6,7 @@
     ./programs.nix
     ./packages.nix
   ];
+
   home = {
     username = "zekar";
     homeDirectory = "/home/zekar";

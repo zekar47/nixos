@@ -1,5 +1,5 @@
 {
-  description = "something";
+  description = "ZEKAR's NixOS Flake.";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; 
     home-manager = {
@@ -20,11 +20,12 @@
           specialArgs = { inherit inputs system; };
           modules = [ 
             ./main/configuration.nix
-      	    ./main/hardware/vm-1.nix
+      	    ./main/hosts/vm-1.nix
             home-manager.nixosModules.home-manager {
               home-manager.extraSpecialArgs = {
                 inherit inputs;
                 inherit system;
+                hostname = "nixos";
               };
               home-manager.useGlobalPkgs = true;
               home-manager.users."zekar" = import ./home-manager/home.nix;
@@ -40,6 +41,7 @@
               home-manager.extraSpecialArgs = {
                 inherit inputs;
                 inherit system;
+                hostName = "lap";
               };
               home-manager.useGlobalPkgs = true;
               home-manager.users."zekar" = import ./home-manager/home.nix;

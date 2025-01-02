@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ specialArgs, config, pkgs, inputs, ... }:
 
 let
   neovimconfig = import ./nixvim;
