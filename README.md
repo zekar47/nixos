@@ -6,7 +6,7 @@ For now, the system is pretty simple, but it's still a work in progress. A full 
 
 ## Programs I use:
 ### DWM
-This was my first ever window manager and right now is my favorite. Since I first switched to GNU/Linux back on 2023, I always wanted to use DWM, but the patching process and the compiling and stuff was kinda hard for me at the time. Afterwards, I used i3, and then Hyprland because ~~wayland is the future of the linux desktop~~ of the pretty animations. But at the back of my mind I always wanted to have a stable, usable (dwm configuration)[https://github.com/zekar47/dwm]. I'm not quite there yet, but I'm trying!
+This was my first ever window manager and right now is my favorite. Since I first switched to GNU/Linux back on 2023, I always wanted to use DWM, but the patching process and the compiling and stuff was kinda hard for me at the time. Afterwards, I used i3, and then Hyprland because ~~wayland is the future of the linux desktop~~ of the pretty animations. But at the back of my mind I always wanted to have a stable, usable [dwm configuration](https://github.com/zekar47/dwm). I'm not quite there yet, but I'm trying!
 
 ### St
 Same thing as DWM, just like to be part of the suckless gang I guess. I didn't really have too many reasons to use ST other than the fact that my previous terminal was kitty, and I honestly didn't like that much the user experience. 
