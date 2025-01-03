@@ -27,6 +27,7 @@
       # Changing default programs
       ls = "eza";
       cd = "z";
+      sxiv = "nsxiv";
 
       # Adding flags by default
       grep = "grep --color=auto";
