@@ -33,7 +33,7 @@ in
     # Multimedia
     krita
     feh
-    sxiv
+    nsxiv
 
     # Development
     cargo

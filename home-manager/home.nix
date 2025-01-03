@@ -7,6 +7,7 @@
     ./colorScheme.nix
     ./programs.nix
     ./packages.nix
+    ./files/files.nix
   ];
 
   home = {
