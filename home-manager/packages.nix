@@ -21,6 +21,8 @@ in
     jellycli
     transmission_4
     qbittorrent-enhanced
+    youtube-tui
+    yt-dlp
     tor-browser
 
     # Games
@@ -42,6 +44,8 @@ in
     sxhkd
     maim
     slop
+    xdotool
+    picom-pijulius
 
     # Others
     keepassxc

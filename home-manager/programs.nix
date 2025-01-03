@@ -5,7 +5,6 @@
   imports = [
     ./zsh/zsh.nix
     ./fastfetch/fastfetch.nix
-    ./picom/picom.nix
   ];
 
   programs = {

@@ -5,8 +5,11 @@ let
 in
 {
   home.file.".xinitrc" = {
-    enable = true;
     source = xinitpath;
     target = ".xinitrc";
+  };
+  home.file.picom_config = {
+    source = ./picom.conf;
+    target = ".config/picom/picom.conf";
   };
 }

@@ -9,8 +9,9 @@ in
     enable = true;
     settings = {
       logo = {
-	type = "sixel";
-	source = img;
+	# type = "sixel";
+	type = "auto";
+	# source = img;
 	width = 30;
       };
       display = {
