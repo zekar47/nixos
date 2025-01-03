@@ -8,6 +8,7 @@
   imports =
     [ 
       ./packages.nix
+      ./services.nix
     ];
 
   networking.networkmanager.enable = true;
@@ -34,37 +35,6 @@
   programs = {
     zsh.enable = true;
     nix-ld.enable = true;
-  };
-
-  services = {
-    spice-vdagentd.enable = true;
-
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
-    };
-
-    openssh.enable = true;
-
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-      displayManager.startx.enable = true;
-      windowManager = {
-        dwm = {
-          enable = true;
-          package = pkgs.dwm.overrideAttrs {
-            src = /home/zekar/suckless/dwm;
-          };
-        };
-      };
-    };
   };
 
   fonts.packages = with pkgs ; [

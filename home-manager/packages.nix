@@ -16,27 +16,36 @@ in
 
     # Internet
     qutebrowser
+    floorp
     vesktop
     jellycli
-    # transmission_4
-    # qbittorrent-enhanced
-    # tor-browser
+    transmission_4
+    qbittorrent-enhanced
+    tor-browser
 
     # Games
     lutris
     steam-run
-    # heroic
-    # osu-lazer-bin
-    # prismlauncher
+    # heroic # For some reason it fails to build, I'll check it out later.
+    osu-lazer-bin
+    prismlauncher
 
     # Multimedia
-    # krita
+    krita
+    feh
+    sxiv
 
     # Development
     cargo
 
+    # X11
+    sxhkd
+    maim
+    slop
+
     # Others
     keepassxc
+    pcmanfm
     font-manager
   ];
 }

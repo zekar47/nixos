@@ -21,7 +21,7 @@
           specialArgs = { inherit inputs system; };
           modules = [ 
             ./main/configuration.nix
-      	    ./main/hosts/vm-1.nix
+      	    ./main/hosts/pc.nix
             home-manager.nixosModules.home-manager {
               home-manager.extraSpecialArgs = {
                 inherit inputs;

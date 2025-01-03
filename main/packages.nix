@@ -11,6 +11,7 @@
     stow
     tmux
     killall
+    file
     fzf
 
     # Internet
@@ -24,6 +25,8 @@
 
     # Others
     sxhkd
+    pavucontrol
+    xclip
 
     # Suckless
     # st
