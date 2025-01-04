@@ -77,7 +77,7 @@
 	export NEWLINE=true
       }
 
-      source /home/zekar/nixos/home-manager/zsh/zekar.zsh-theme
+      source /home/zekar/nixos/home-manager/programs/zsh/zekar.zsh-theme
     '';
     syntaxHighlighting = {
       enable = true;

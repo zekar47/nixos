@@ -1,4 +1,4 @@
-{ specialArgs, config, pkgs, inputs, ... }:
+{ specialArgs, config, pkgs, inputs, system, ... }:
 
 let
   neovimconfig = import ./nixvim;
@@ -24,6 +24,7 @@ in
     youtube-tui
     yt-dlp
     tor-browser
+    newsboat
 
     # Games
     lutris
@@ -34,8 +35,9 @@ in
 
     # Multimedia
     krita
-    feh
     nsxiv
+    musescore
+    zathura
 
     # Development
     cargo
@@ -45,7 +47,8 @@ in
     maim
     slop
     xdotool
-    picom-pijulius
+    picom
+    scrot
 
     # Others
     keepassxc

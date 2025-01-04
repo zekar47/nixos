@@ -1,6 +1,8 @@
 { specialArgs, config, pkgs, inputs, ... }:
 {
+  imports = [
+    ./programs/sxhkd.nix
+  ];
   services = {
-    # picom.enable = true;
   };
 }

@@ -10,9 +10,8 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-colors.url = "github:misterio77/nix-colors";
   };
-  outputs = { self, nixpkgs, home-manager, nixvim, nix-colors, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs: 
     let
       system = "x86_64-linux";
     in
@@ -26,7 +25,6 @@
               home-manager.extraSpecialArgs = {
                 inherit inputs;
                 inherit system;
-                inherit nix-colors;
                 hostName = "nixos";
               };
               home-manager.useGlobalPkgs = true;
@@ -43,7 +41,6 @@
               home-manager.extraSpecialArgs = {
                 inherit inputs;
                 inherit system;
-                inherit nix-colors;
                 hostName = "lap";
               };
               home-manager.useGlobalPkgs = true;
