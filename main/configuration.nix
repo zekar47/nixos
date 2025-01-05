@@ -34,7 +34,21 @@
 
   programs = {
     zsh.enable = true;
-    nix-ld.enable = true;
+    steam.enable = true;
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        stdenv.cc.cc
+        zlib
+        fuse3
+        icu
+        nss
+        openssl
+        curl
+        expat
+        xorg.libXxf86vm
+      ];
+    };
   };
 
   fonts.packages = with pkgs ; [

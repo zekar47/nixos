@@ -8,15 +8,23 @@
       "super + return" = "st";
       "super + d" = "dmenu_run";
       "super + w" = "floorp";
-      "super + p" = "cd /home/zekar/Pictures/Wallpapers && nsxiv -t *";
+      "super + p" = "cd /home/zekar/Pictures/Wallpapers && nsxiv -t -g$(/home/zekar/scripts/calcCenterGeo.sh 320 180) *";
       "super + n" = "st newsboat";
+      "super + x" = "lutris lutris:rungameid/1";
 
       # Running scripts
       "super + shift + s" = "scrot --select -f -l width=3 - | xclip -selection clipboard -target image/png";
       "Print" = "scrot - | xclip -selection clipboard -target image/png";
+
+      # THINGS THAT EVERY AUDIO SERVICE SHOULD HAVE BY DEFAULT BUT FOR SOME REASON THEY DON'T HAVE IT.
+      "XF86AudioRaiseVolume" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+      "XF86AudioLowerVolume" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+      "XF86AudioMute"        = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+
     };
   };
 }
+
 /* I'll put my dwm keybindings here too so I make sure don't overlap and stuff okay? byeee.
 Mod + j: Go down the stack.
 Mod + k: Go up the stack.

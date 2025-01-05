@@ -24,8 +24,12 @@
     python3
 
     # Others
-    sxhkd
     pavucontrol
+    nix-ld
+    
+    # X11
+    xorg.libXxf86vm
+    sxhkd
     xclip
 
     # Suckless

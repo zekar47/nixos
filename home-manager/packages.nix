@@ -1,4 +1,4 @@
-{ specialArgs, config, pkgs, inputs, system, ... }:
+{ specialArgs, config, pkgs, inputs, system, game-rs, ... }:
 
 let
   neovimconfig = import ./nixvim;
@@ -11,6 +11,7 @@ in
 {
   home.packages = with pkgs; [
     # Terminal utilities
+    alacritty
     nvim
     figlet
 
@@ -29,6 +30,7 @@ in
     # Games
     lutris
     steam-run
+    # game-rs.packages.x86_64-linux.default
     # heroic # For some reason it fails to build, I'll check it out later.
     osu-lazer-bin
     prismlauncher
