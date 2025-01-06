@@ -7,6 +7,7 @@
     ./packages.nix
     ./files/files.nix
     ./services.nix
+    ./theming.nix
   ];
 
   home = {

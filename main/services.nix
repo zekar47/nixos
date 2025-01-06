@@ -24,6 +24,7 @@
         variant = "";
       };
       displayManager.startx.enable = true;
+      xkbOptions = "caps:swapescape";
       windowManager = {
         dwm = {
           enable = true;
