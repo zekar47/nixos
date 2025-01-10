@@ -9,6 +9,7 @@
     [ 
       ./packages.nix
       ./services.nix
+      ./virtualisation.nix
     ];
 
   networking.networkmanager.enable = true;
@@ -25,7 +26,7 @@
     users.zekar = {
       isNormalUser = true;
       description = "zekar";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "podman" ];
     };
   };
 

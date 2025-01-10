@@ -29,8 +29,6 @@ in
 
     # Games
     lutris
-    steam-run
-    # game-rs.packages.x86_64-linux.default
     # heroic # For some reason it fails to build, I'll check it out later.
     osu-lazer-bin
     prismlauncher

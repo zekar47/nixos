@@ -25,13 +25,14 @@
 
     # Others
     pavucontrol
+    distrobox
     nix-ld
     
     # X11
     xorg.libXxf86vm
     sxhkd
     xclip
-
+    
     # Suckless
     # st
     (st.overrideAttrs (oldAttrs: rec {

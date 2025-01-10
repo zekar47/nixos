@@ -10,7 +10,7 @@
       "super + w" = "floorp";
       "super + p" = "cd /home/zekar/Pictures/Wallpapers && nsxiv -t -g$(/home/zekar/scripts/calcCenterGeo.sh 320 180) *";
       "super + n" = "st newsboat";
-      "super + x" = "lutris lutris:rungameid/1";
+      "super + x" = "/home/zekar/Undertale/game2/run.sh";
 
       # Running scripts
       "super + shift + s" = "scrot --select -f -l width=3 - | xclip -selection clipboard -target image/png";
@@ -20,7 +20,6 @@
       "XF86AudioRaiseVolume" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
       "XF86AudioLowerVolume" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
       "XF86AudioMute"        = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-
     };
   };
 }
