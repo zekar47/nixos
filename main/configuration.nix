@@ -36,6 +36,7 @@
   programs = {
     zsh.enable = true;
     steam.enable = true;
+    dconf.enable = true;
     nix-ld = {
       enable = true;
       libraries = with pkgs; [
