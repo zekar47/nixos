@@ -8,6 +8,7 @@
     ./files/files.nix
     ./services.nix
     ./theming.nix
+    ./xdg.nix
   ];
 
   home = {

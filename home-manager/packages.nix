@@ -32,6 +32,7 @@ in
     # heroic # For some reason it fails to build, I'll check it out later.
     osu-lazer-bin
     prismlauncher
+    godot_4
 
     # Multimedia
     krita

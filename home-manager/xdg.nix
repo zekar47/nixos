@@ -2,9 +2,7 @@
 {
   xdg = {
     mimeApps = {
-      enabled = true;
-      defaultApplications = {
-      };
+      enable = true;
     };
   };
 }
