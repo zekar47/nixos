@@ -53,14 +53,6 @@
     };
   };
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      dwmblocks = prev.dwmblocks.override (old: {
-        src = /home/zekar/suckless/dwmblocks;
-      });
-    })
-  ];
-
   fonts.packages = with pkgs ; [
     noto-fonts
     noto-fonts-cjk-sans
@@ -71,7 +63,10 @@
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
-    # (nerdfonts.override { fonts = [ "FiraCode" 	"DroidSansMono" "JetBrainsMono" "Monofur" "Mononoki" "Iosevka" ]; })
+    bront_fonts
+    google-fonts
+    texlivePackages.collection-fontsrecommended
+    texlivePackages.collection-fontsextra
     nerd-fonts.fira-code
     nerd-fonts.droid-sans-mono
     nerd-fonts.jetbrains-mono
@@ -80,6 +75,30 @@
     nerd-fonts.iosevka
   ];
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];  # Polkit
+    };
+  security.polkit.enable = true;
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+    extraConfig = ''
+      DefaultTimeoutStopSec=10s
+    '';
+  };
+      
   home-manager.backupFileExtension = "backup";
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

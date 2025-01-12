@@ -22,15 +22,16 @@
       xkb = {
         layout = "us";
         variant = "";
+        #        options = "caps:swapescape";
       };
       displayManager.startx.enable = true;
-      xkbOptions = "caps:swapescape";
       windowManager = {
         dwm = {
           enable = true;
-          package = pkgs.dwm.overrideAttrs {
-            src = /home/zekar/suckless/dwm;
-          };
+          package = pkgs.dwm.overrideAttrs (oldAttrs: {
+            src = /home/zekar/suckless/dwm-flexipatch;
+            buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.imlib2 pkgs.xorg.libXrender pkgs.xorg.libXext ];
+          });
         };
       };
     };

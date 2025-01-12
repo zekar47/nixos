@@ -6,9 +6,9 @@
     keybindings = {
       # Launching stuff
       "super + return" = "st";
-      "super + d" = "dmenu_run";
+      "super + d" = "dmenu_run -c -g 2 -l 30";
       "super + w" = "floorp";
-      "super + p" = "cd /home/zekar/Pictures/Wallpapers && nsxiv -t -g$(/home/zekar/scripts/calcCenterGeo.sh 320 180) *";
+      "super + p" = "cd /home/zekar/Pictures/Wallpapers && nsxiv -t -g$(/home/zekar/scripts/calcCenterGeo.sh 1000 1300) *";
       "super + n" = "st newsboat";
       "super + x" = "/home/zekar/Undertale/game2/run.sh";
 

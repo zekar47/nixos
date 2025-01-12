@@ -17,7 +17,7 @@ in
 
     # Internet
     qutebrowser
-    floorp
+    brave
     vesktop
     jellycli
     transmission_4
@@ -33,15 +33,18 @@ in
     osu-lazer-bin
     prismlauncher
     godot_4
+    lunar-client
 
     # Multimedia
     krita
     nsxiv
     musescore
     zathura
+    catppuccinifier-cli
 
     # Development
     cargo
+    libqalculate
 
     # X11
     sxhkd
@@ -55,5 +58,6 @@ in
     keepassxc
     pcmanfm
     font-manager
+    via
   ];
 }

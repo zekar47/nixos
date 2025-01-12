@@ -1,8 +1,8 @@
 { specialArgs, config, pkgs, inputs, ... }:
 {
-  xdg = {
-    mimeApps = {
-      enable = true;
-    };
-  };
+  #  xdg = {
+  #    mimeApps = {
+  #      enable = true;
+  #    };
+  #  };
 }
