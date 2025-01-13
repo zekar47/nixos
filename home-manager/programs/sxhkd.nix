@@ -8,9 +8,9 @@
       "super + return" = "st";
       "super + d" = "dmenu_run -c -g 2 -l 30";
       "super + w" = "floorp";
-      "super + p" = "cd /home/zekar/Pictures/Wallpapers && nsxiv -t -g$(/home/zekar/scripts/calcCenterGeo.sh 1000 1300) *";
+      "super + p" = "cd ~/Pictures/Wallpapers && nsxiv -t -g$(~/nixos/scripts/calcCenterGeo.sh 1000 1300) *";
       "super + n" = "st newsboat";
-      "super + x" = "/home/zekar/Undertale/game2/run.sh";
+      "super + x" = "~/Undertale/game2/run.sh";
 
       # Running scripts
       "super + shift + s" = "scrot --select -f -l width=3 - | xclip -selection clipboard -target image/png";

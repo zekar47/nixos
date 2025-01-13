@@ -29,7 +29,7 @@
         dwm = {
           enable = true;
           package = pkgs.dwm.overrideAttrs (oldAttrs: {
-            src = /home/zekar/suckless/dwm-flexipatch;
+            src = /home/zekar/suckless/dwm;
             buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.imlib2 pkgs.xorg.libXrender pkgs.xorg.libXext ];
           });
         };

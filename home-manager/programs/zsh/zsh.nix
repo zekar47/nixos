@@ -53,7 +53,7 @@
       yt-dlp-pl = "yt-dlp -i --extract-audio --audio-format flac --output \"%(playlist_title)s/%(playlist_index)03d. %(title)s.%(ext)s)\"";
 
       # Scripts
-      extract = "/home/zekar/scripts/extract.sh";
+      extract = "~/nixos/scripts/extract.sh";
 
       # NixOS
       rb = "sudo nixos-rebuild switch --flake /home/zekar/nixos --impure";

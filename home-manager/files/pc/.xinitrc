@@ -4,7 +4,7 @@ xrandr --output HDMI-1 --mode 1920x1080_240
 
 xinput --set-prop 'Glorious Model I' "libinput Accel Speed" -0.5 &
 wal -R &
-/home/zekar/scripts/updateColors.sh
+~/nixos/scripts/updateColors.sh
 picom &
 dwmblocks &
 sxhkd &
