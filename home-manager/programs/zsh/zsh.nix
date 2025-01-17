@@ -10,11 +10,11 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-      "alias-finder"
-      "sudo"
-      "tailscale"
-      "vi-mode"
-      "zoxide"
+        "alias-finder"
+        "sudo"
+        "tailscale"
+        "vi-mode"
+        "zoxide"
       ];
     };
     shellAliases = {
@@ -28,6 +28,8 @@
       ls = "eza";
       cd = "z";
       sxiv = "nsxiv";
+      mupdf = "zathura";
+      pdf = "zathura"; # I love zathura, but it has such an uncomfortable name to type (I hate the "za")
 
       # Adding flags by default
       grep = "grep --color=auto";

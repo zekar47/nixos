@@ -10,7 +10,7 @@
       "super + w" = "floorp";
       "super + p" = "cd ~/Pictures/Wallpapers && nsxiv -t -g$(~/nixos/scripts/calcCenterGeo.sh 1000 1300) *";
       "super + n" = "st newsboat";
-      "super + x" = "~/Undertale/game2/run.sh";
+      "super + x" = "~/Undertale/Undertale/run.sh";
 
       # Running scripts
       "super + shift + s" = "scrot --select -f -l width=3 - | xclip -selection clipboard -target image/png";

@@ -22,7 +22,7 @@
       xkb = {
         layout = "us";
         variant = "";
-        #        options = "caps:swapescape";
+        options = "caps:swapescape";
       };
       displayManager.startx.enable = true;
       windowManager = {
@@ -30,7 +30,7 @@
           enable = true;
           package = pkgs.dwm.overrideAttrs (oldAttrs: {
             src = /home/zekar/suckless/dwm;
-            buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.imlib2 pkgs.xorg.libXrender pkgs.xorg.libXext ];
+            buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.imlib2 pkgs.xorg.libXrender pkgs.xorg.libXext pkgs.pango ];
           });
         };
       };

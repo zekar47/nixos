@@ -10,10 +10,12 @@ let
 in
 {
   home.packages = with pkgs; [
+    lxappearance
     # Terminal utilities
     alacritty
     nvim
     figlet
+    qrrs
 
     # Internet
     qutebrowser
