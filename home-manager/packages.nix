@@ -26,6 +26,7 @@ in
     yt-dlp
     tor-browser
     newsboat
+    groff
 
     # Games
     lutris

@@ -9,9 +9,17 @@ in
       source = xinitpath;
       target = ".xinitrc";
     };
-    picom_config = {
+    picomConfig = {
         source = ./picom.conf;
         target = ".config/picom/picom.conf";
+    };
+  };
+
+  xdg.configFile = {
+    nsxivKeys = {
+      source = ./nsxiv;
+      target = "./nsxiv/exec/key-handler";
+      executable = true;
     };
   };
 }
