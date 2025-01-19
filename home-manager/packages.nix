@@ -14,6 +14,9 @@ in
     alacritty
     nvim
     figlet
+    groff
+    imagemagick
+    ghostscript
 
     # Internet
     qutebrowser
@@ -26,7 +29,6 @@ in
     yt-dlp
     tor-browser
     newsboat
-    groff
 
     # Games
     lutris
@@ -37,6 +39,7 @@ in
     lunar-client
 
     # Multimedia
+    obs-studio
     krita
     nsxiv
     musescore

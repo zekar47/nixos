@@ -8,15 +8,15 @@
       "super + return" = "st";
       "super + d" = "dmenu_run -c -g 2 -l 30";
       "super + w" = "floorp";
-      "super + p" = "cd ~/Pictures/Wallpapers && nsxiv -t -g$(~/nixos/scripts/calcCenterGeo.sh 1000 1300) *";
       "super + n" = "st newsboat";
-      "super + x" = "~/Undertale/game2/run.sh";
 
       # Running scripts
       "super + shift + s" = "scrot --select -f -l width=3 - | xclip -selection clipboard -target image/png";
       "Print" = "scrot - | xclip -selection clipboard -target image/png";
+      "super + p" = "cd ~/Pictures/Wallpapers && nsxiv -t -g$(~/nixos/scripts/calcCenterGeo.sh 1000 1300) *";
+      "super + x" = "~/Undertale/game2/run.sh";
 
-      # THINGS THAT EVERY AUDIO SERVICE SHOULD HAVE BY DEFAULT BUT FOR SOME REASON THEY DON'T HAVE IT.
+      # Volume 
       "XF86AudioRaiseVolume" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
       "XF86AudioLowerVolume" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
       "XF86AudioMute"        = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
