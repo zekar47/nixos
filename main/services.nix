@@ -22,7 +22,7 @@
       xkb = {
         layout = "us";
         variant = "";
-        options = "caps:swapescape";
+        #        options = "caps:swapescape";
       };
       displayManager.startx.enable = true;
       windowManager = {

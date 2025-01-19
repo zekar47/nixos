@@ -16,6 +16,7 @@
 
     # Internet
     floorp
+    wirelesstools
 
     # Development
     gnumake
