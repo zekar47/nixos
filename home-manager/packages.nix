@@ -10,6 +10,7 @@ let
 in
 {
   home.packages = with pkgs; [
+    lxappearance
     # Terminal utilities
     alacritty
     nvim
@@ -17,6 +18,7 @@ in
     groff
     imagemagick
     ghostscript
+    qrrs
 
     # Internet
     qutebrowser
