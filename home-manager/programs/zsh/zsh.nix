@@ -63,6 +63,8 @@
     };
     initExtra = ''
       export PATH="$HOME/nixos/scripts:$PATH"
+
+      eval "$(ssh-agent -s)"
       fastfetch
 
       # Unset the NEWLINE variable initially
