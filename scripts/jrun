@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# Check if a .java file is provided as an argument
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <JavaFile>"
+  exit 1
+fi
+
+JAVA_FILE="$1"
+
+# Check if the file has a .java extension
+if [ "${JAVA_FILE##*.}" != "java" ]; then
+  echo "Error: The provided file is not a .java file."
+  exit 1
+fi
+
+# Check if the file exists
+if [ ! -f "$JAVA_FILE" ]; then
+  echo "Error: File '$JAVA_FILE' does not exist."
+  exit 1
+fi
+
+# Extract the base name of the file (without extension)
+CLASS_NAME=$(basename "$JAVA_FILE" .java)
+
+# Compile the Java file
+javac "$JAVA_FILE"
+if [ $? -ne 0 ]; then
+  echo "Error: Compilation failed."
+  exit 1
+fi
+
+# Run the compiled Java program
+java "$CLASS_NAME"
+if [ $? -ne 0 ]; then
+  echo "Error: Running the Java program failed."
+  exit 1
+fi

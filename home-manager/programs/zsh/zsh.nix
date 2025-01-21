@@ -62,6 +62,7 @@
       nc = "nvim /home/zekar/nixos/main/configuration.nix"; # As in "Nix Config"
     };
     initExtra = ''
+      export PATH="$HOME/nixos/scripts:$PATH"
       fastfetch
 
       # Unset the NEWLINE variable initially

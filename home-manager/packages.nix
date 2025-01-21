@@ -51,6 +51,7 @@ in
     # Development
     cargo
     libqalculate
+    jdk
 
     # X11
     sxhkd

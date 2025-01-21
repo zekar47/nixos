@@ -15,6 +15,7 @@
 
     udev.extraRules = ''
         ACTION=="add", KERNEL=="sd*", SUBSYSTEM=="block", RUN+="/bin/sh /home/zekar/scripts/automount.sh"
+        ACTION=="add", SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_NAME}=="AC", RUN+="/usr/bin/env pkill -RTMIN+3 dwmblocks"
     '';
 
     xserver = {
@@ -22,7 +23,7 @@
       xkb = {
         layout = "us";
         variant = "";
-        #        options = "caps:swapescape";
+        options = "caps:swapescape";
       };
       displayManager.startx.enable = true;
       windowManager = {

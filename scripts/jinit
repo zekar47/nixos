@@ -1,0 +1,47 @@
+#!/bin/sh
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <Project Name>"
+fi
+
+PROJECT_NAME="$1"
+# Check if the project already exists.
+if [ -d "$PROJECT_NAME" ]; then
+  echo "Error: Directory '$PROJECT_NAME' already exists."
+  exit 1
+fi
+
+mkdir "$PROJECT_NAME"
+cd "$PROJECT_NAME" || exit 1
+
+mkdir -p src
+
+# Create a basic Main.java file inside the src/ directory
+cat > src/Main.java <<EOL
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+EOL
+
+git init
+
+# Create a .gitignore file (to ignore build and IDE files)
+cat > .gitignore <<EOL
+# Ignore compiled class files
+*.class
+
+# Ignore build directories
+/build/
+
+# Ignore IDE-specific files (example for IntelliJ IDEA and Eclipse)
+.idea/
+*.iml
+*.project
+*.classpath
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+EOL
