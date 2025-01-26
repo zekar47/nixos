@@ -51,6 +51,12 @@
 
     mpv = {
       enable = true;
+      scripts = with pkgs.mpvScripts; [
+        thumbnail
+        sponsorblock
+        quality-menu
+        mpv-cheatsheet
+      ];
     };
 
     pywal.enable = true;

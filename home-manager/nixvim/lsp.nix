@@ -7,7 +7,10 @@
       bashls.enable = true;
       clangd.enable = true;
       cssls.enable = true;
-      # gdscript.enable = true; # For some reason, this isn't working?
+      gdscript = {
+        enable = true;
+        package = null;
+      };
       html.enable = true;
       java_language_server.enable = true;
       jsonls.enable = true;

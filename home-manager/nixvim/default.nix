@@ -25,9 +25,7 @@
     gitsigns.enable = true;
     nvim-tree.enable = true;
     nvim-autopairs.enable = true;
-    guess-indent.enable = true;
     web-devicons.enable = true;
-
     cmp = {
       enable = true;
       autoEnableSources = true;
@@ -44,5 +42,6 @@
         indent.enable = true;
       };
     };
+    treesitter-context.enable = true;
   };
 }

@@ -41,6 +41,8 @@ in
     lunar-client
 
     # Multimedia
+    audacity
+    ffmpeg
     obs-studio
     krita
     nsxiv

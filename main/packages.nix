@@ -33,7 +33,8 @@
     xorg.libXxf86vm
     sxhkd
     xclip
-    mate.mate-polkit
+    polkit
+    polkit_gnome
     
     # Suckless
     # st
