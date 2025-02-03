@@ -2,6 +2,8 @@
 {
   services = {
     spice-vdagentd.enable = true;
+    tailscale.enable = true;
+    openssh.enable = true;
 
     pipewire = {
       enable = true;
@@ -10,8 +12,6 @@
       pulse.enable = true;
       jack.enable = true;
     };
-
-    openssh.enable = true;
 
     udev.extraRules = ''
         ACTION=="add", KERNEL=="sd*", SUBSYSTEM=="block", RUN+="/bin/sh /home/zekar/scripts/automount.sh"

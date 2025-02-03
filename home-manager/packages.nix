@@ -40,6 +40,11 @@ in
     godot_4
     lunar-client
 
+    # DAW
+    ardour
+    distrho-ports
+    vital
+
     # Multimedia
     audacity
     ffmpeg
@@ -49,6 +54,7 @@ in
     musescore
     zathura
     catppuccinifier-cli
+    inkscape
 
     # Development
     cargo
@@ -57,6 +63,8 @@ in
 
     # X11
     sxhkd
+    weston
+    waydroid
     maim
     slop
     xdotool
@@ -68,5 +76,6 @@ in
     pcmanfm
     font-manager
     via
+    super-productivity
   ];
 }

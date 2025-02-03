@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -19,7 +15,16 @@
   boot.kernelModules = [
     "v4l2loopback"
   ];
+
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = 1;
+    "net.ipv6.conf.all.forwarding" = 1;
+  };
+
   networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = false;
+  };
 
   # Set your time zone.
   time.timeZone = "America/Monterrey";
@@ -33,12 +38,18 @@
     users.zekar = {
       isNormalUser = true;
       description = "zekar";
-      extraGroups = [ "networkmanager" "wheel" "podman" ];
+      extraGroups = [ "networkmanager" "wheel" "podman" "libvirtd" ];
     };
   };
 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
 
   programs = {
     zsh.enable = true;

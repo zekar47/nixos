@@ -28,8 +28,10 @@
     pavucontrol
     distrobox
     nix-ld
+    qemu
     
     # X11
+    cage
     xorg.libXxf86vm
     sxhkd
     xclip
